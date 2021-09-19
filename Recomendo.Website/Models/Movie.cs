@@ -31,10 +31,6 @@ namespace Recomendo.Website.Models
         [Required]
         public double Rating { get; set; }
 
-        [DisplayName("Sinopse")]
-        [Required(ErrorMessage = "A Sinopse do Filme é obrigatória")]
-        public string Synopsis { get; set; }
-
         [DisplayName("Opinião")]
         [Required(ErrorMessage = "A Opinião sobre o Filme é obrigatória")]
         public string Review { get; set; }
