@@ -19,5 +19,35 @@ namespace Recomendo.Website.Models
             context.Categories.Add(category);
             context.SaveChanges();
         }
+
+        public void Add(Movie movie)
+        {
+            context.Movies.Add(movie);
+            context.SaveChanges();
+        }
+
+        public void Delete(Category category)
+        {
+            context.Categories.Remove(category);
+            context.SaveChanges();
+        }
+
+        public void Delete(Movie movie)
+        {
+            context.Movies.Remove(movie);
+            context.SaveChanges();
+        }
+
+        public void Update(Category category)
+        {
+            context.Categories.Update(category);
+            context.SaveChanges();
+        }
+
+        public void Update(Movie movie)
+        {
+            context.Movies.Update(movie);
+            context.SaveChanges();
+        }
     }
 }

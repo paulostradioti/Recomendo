@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <Folder Include="Infrastructure\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="wwwroot\images\movies\" />
   </ItemGroup>
 
 </Project>

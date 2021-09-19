@@ -1,0 +1,12 @@
+﻿@model Category
+<form method="post" asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="container mt-5">
+        <div class="form-group">
+            <label asp-for="CategoryName"></label>
+            <input asp-for="CategoryName" class="form-control" />
+            <span asp-validation-for="CategoryName" class="text-danger"></span>
+            <input type="submit" class="btn btn-info" value="Salvar" />
+        </div>
+    </div>
+</form>

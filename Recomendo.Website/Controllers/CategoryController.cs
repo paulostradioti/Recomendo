@@ -30,7 +30,13 @@ namespace Recomendo.Website.Controllers
         [HttpPost]
         public IActionResult Edit(Category category)
         {
-            return View(repository.Categories);
+            if (ModelState.IsValid)
+            {
+                repository.Update(category);
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(category);
         }
 
         public IActionResult Create()
@@ -48,6 +54,19 @@ namespace Recomendo.Website.Controllers
             }
 
             return View(category);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var category = repository.Categories.FirstOrDefault(x => x.Id == id);
+            return View(category);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Category category)
+        {
+            repository.Delete(category);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

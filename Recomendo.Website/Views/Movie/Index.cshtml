@@ -30,7 +30,7 @@
                 <td width="50%">@movie.Title</td>
                 <td width="20%">&nbsp;</td>
                 <td width="15%" class="text-right"><a asp-route-Id="@movie.Id" asp-action="Edit" class="btn btn-outline-primary"><i class="fas fa-edit"></i>&nbsp; Editar</a></td>
-                <td width="15%" class="text-right"><a asp-route-CategoryId="@movie.Id" asp-action="Delete" class="btn btn-outline-danger"><i class="fas fa-trash"></i>&nbsp; Remover</a></td>
+                <td width="15%" class="text-right"><a asp-route-Id="@movie.Id" asp-action="Delete" class="btn btn-outline-danger"><i class="fas fa-trash"></i>&nbsp; Remover</a></td>
             </tr>
                 }
             }

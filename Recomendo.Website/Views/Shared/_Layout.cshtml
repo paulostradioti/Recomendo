@@ -7,6 +7,7 @@
     <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/font-awesome/css/all.css" />
     <link rel="stylesheet" href="~/site.css" />
+    <link href="~/summernote/summernote.min.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -43,8 +44,11 @@
     <div>
         @RenderBody()
     </div>
+    <script src="~/popper.js/umd/popper.js"></script>
     <script src="~/jquery/jquery.min.js"></script>
+    <script src="~/summernote/summernote.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
