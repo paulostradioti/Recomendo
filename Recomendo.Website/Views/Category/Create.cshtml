@@ -1,0 +1,11 @@
+﻿@model Category
+    <form method="post" asp-action="Create">
+        <div class="container mt-5">
+            <div class="form-group">
+                <label asp-for="CategoryName"></label>
+                <input asp-for="CategoryName" class="form-control" />
+            </div>
+            <input type="submit" class="btn btn-info" value="Create" />
+        </div>
+
+    </form>

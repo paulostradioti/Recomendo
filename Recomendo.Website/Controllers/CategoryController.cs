@@ -32,5 +32,22 @@ namespace Recomendo.Website.Controllers
         {
             return View(repository.Categories);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                repository.Add(category);
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(category);
+        }
     }
 }

@@ -9,5 +9,7 @@ namespace Recomendo.Website.Models
     {
         IQueryable<Movie> Movies { get; }
         IQueryable<Category> Categories { get; }
+
+        void Add(Category category);
     }
 }

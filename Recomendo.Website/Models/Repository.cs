@@ -13,5 +13,11 @@ namespace Recomendo.Website.Models
         public IQueryable<Movie> Movies => context.Movies;
 
         public IQueryable<Category> Categories => context.Categories;
+
+        public void Add(Category category)
+        {
+            context.Categories.Add(category);
+            context.SaveChanges();
+        }
     }
 }
