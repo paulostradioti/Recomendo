@@ -1,0 +1,47 @@
+﻿@model IQueryable<Movie>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6">
+            <h1 class="text-primary">Filmes</h1>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Movie" asp-action="Create" class="btn btn-primary">
+                <i class="fas fa-plus"></i> &nbsp; Adicionar Filme
+            </a>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped mt-5" style="width: 100%">
+        <thead class="bg-light">
+            <tr>
+                <th width="50%">Título</th>
+                <th width="20%">Categorias</th>
+                <th width="15%" class="text-right">Editar</th>
+                <th width="15%" class="text-right">Remover</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() > 0)
+            {
+                @foreach (var movie in Model)
+                {
+            <tr>
+                <td width="50%">@movie.Title</td>
+                <td width="20%">&nbsp;</td>
+                <td width="15%" class="text-right"><a asp-route-Id="@movie.Id" asp-action="Edit" class="btn btn-outline-primary"><i class="fas fa-edit"></i>&nbsp; Editar</a></td>
+                <td width="15%" class="text-right"><a asp-route-CategoryId="@movie.Id" asp-action="Delete" class="btn btn-outline-danger"><i class="fas fa-trash"></i>&nbsp; Remover</a></td>
+            </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center bg-white"><i class="fas fa-info-circle"></i> &nbsp; Não existem filmes cadastrados</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>

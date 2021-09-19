@@ -1,0 +1,29 @@
+﻿@model IQueryable<Movie>
+@*<div class="py-5 bg-light">*@
+<div class="mt-5 container">
+    <div class="row row-flex">
+        @foreach (var movie in Model)
+        {
+            <div class="col">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/360/640" alt="Thumbnail [360%x640]">
+                    <div class="card-header">
+                        @movie.Title (@movie.Year)
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a class="btn btn-sm btn-outline-secondary"  asp-route-Id="@movie.Id" asp-action="Details" asp-controller="Movie">View</a>
+                                <a class="btn btn-sm btn-outline-secondary"  asp-route-Id="@movie.Id" asp-action="Edit" asp-controller="Movie">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted float-right">@($"{movie.DurationHours}h {movie.DurationMinutes}min")</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

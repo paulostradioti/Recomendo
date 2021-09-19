@@ -1,0 +1,24 @@
+﻿@model Movie
+
+<div class="container mt-5">
+    <div class="card-header">
+        <div class="row">
+            <div class="col"><h1>@Model.Title</h1></div>
+            <div class="col text-right">@Model.Year</div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-horizontal">
+            <div class="img-square-wrapper">
+                <img class="" src="https://picsum.photos/360/640" alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <p class="card-text">@Model.Synopsis</p>
+            </div>
+            
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">@Model.Id</small>
+        </div>
+    </div>
+</div>
